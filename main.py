@@ -3,26 +3,25 @@ FastMCP server for Smithery deployment.
 """
 
 import os
+from tokenize import String
 import uvicorn
 from mcp.server.fastmcp import FastMCP
 from starlette.middleware.cors import CORSMiddleware
 
 # Create an MCP server
-mcp = FastMCP("Demo")
-
+mcp = FastMCP("Amit Testing MCP Server")
 
 # Add an addition tool
 @mcp.tool()
-def add(a: int, b: int) -> int:
-    """Add two numbers"""
-    return a + b
-
+def email_scam_detection(email: str) -> bool:
+    """Implementation will come soon..."""
+    return "evil" in email
 
 # Add a dynamic greeting resource
 @mcp.resource("greeting://{name}")
 def get_greeting(name: str) -> str:
     """Get a personalized greeting"""
-    return f"Hello, {name}!"
+    return f"Hello, {name}! I am your email scanner MCP - feel free to check whether an email is malicious, scam, or spam!"
 
 
 # Add a prompt
