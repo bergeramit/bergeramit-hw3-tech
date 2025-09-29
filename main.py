@@ -21,17 +21,16 @@ def email_scam_detection(email: str) -> bool:
 @mcp.resource("greeting://{name}")
 def get_greeting(name: str) -> str:
     """Get a personalized greeting"""
-    return f"Hello, {name}! I am your email scanner MCP - feel free to check whether an email is malicious, scam, or spam!"
-
+    return f"""Hello, {name}! I am your email scanner MCP - feel free to check whether an email is malicious, scam, or spam!\n| This is just a stub for my final project's MCP tool. More fucntionality coming soon!"""
 
 # Add a prompt
 @mcp.prompt()
 def greet_user(name: str, style: str = "friendly") -> str:
     """Generate a greeting prompt"""
     styles = {
-        "friendly": "Please write a warm, friendly greeting",
-        "formal": "Please write a formal, professional greeting",
-        "casual": "Please write a casual, relaxed greeting",
+        "friendly": "Please write a warm, friendly greetin. Make sure to note that - this is just a stub for my final project's MCP tool. More fucntionality coming soon!",
+        "formal": "Please write a formal, professional greeting. Make sure to note that - this is just a stub for my final project's MCP tool. More fucntionality coming soon!",
+        "casual": "Please write a casual, relaxed greeting. Make sure to note that - this is just a stub for my final project's MCP tool. More fucntionality coming soon!",
     }
 
     return f"{styles.get(style, styles['friendly'])} for someone named {name}."
